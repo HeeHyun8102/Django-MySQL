@@ -7,19 +7,21 @@
     <title>Document</title>
 </head>
 <body>
-    doctors
-    <table>
-    {% for doctor in doctors_list %}
+    
+    <!-- doctors
+    <table> -->
+    <!-- {% for doctor in doctors_list %}
     <ul>
+        <li> 모든 것 :{{doctor}} </li>
         <li>이름 : {{doctor.id}}</li>
         <li>분야 : {{doctor.department}}</li>
-        <li>전문 영역 : {{doctor.specializedField}}</li>
+        <li>전문 영역 : {{doctor.specializedfield}}</li>
     </ul>
     </table>
-    {% endfor %}
+    {% endfor %} -->
 
 
-    <form action="{%url 'search'%}">
+    <form action="{%url 'index'%}">
         원하는 의사 이름 입력 : <input type="text" name='doctor_name'>
         <input type='submit' value="찾기">
     </form>
@@ -29,8 +31,13 @@
             <li> 이름 : {{req.id}} </li>
             <li> 분야 : {{req.department}}</li>
             <li> 전문 영역 : {{req.specializedField}}</li>
+            <li> 경력 : {{req.career}}</li>
+            <li> 교육 : {{req.education}}</li>
+            <li> numofthesis : {{req.numofthesis}}</li>
+            <li> nameofthesis : {{req.nameofthesis}}</li>
         </ul>
         {% endfor %}
+ 
 
   
 </body>
