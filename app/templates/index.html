@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    doctors
+    <table>
+    {% for doctor in doctors_list %}
+    <ul>
+        <li>이름 : {{doctor.id}}</li>
+        <li>분야 : {{doctor.department}}</li>
+        <li>전문 영역 : {{doctor.specializedField}}</li>
+    </ul>
+    </table>
+    {% endfor %}
+
+
+    <form action="{%url 'search'%}">
+        원하는 의사 이름 입력 : <input type="text" name='doctor_name'>
+        <input type='submit' value="찾기">
+    </form>
+    <h3>결과</h1>
+        {% for req in doctorName %}
+        <ul>
+            <li> 이름 : {{req.id}} </li>
+            <li> 분야 : {{req.department}}</li>
+            <li> 전문 영역 : {{req.specializedField}}</li>
+        </ul>
+        {% endfor %}
+
+  
+</body>
+</html>
